@@ -1,2 +1,2 @@
 # kata-tdd-1-CAO-HONG-VU
-This is a kata project
+kata http://osherove.com/tdd-kata-1
