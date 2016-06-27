@@ -1,0 +1,26 @@
+{
+  "name": "kata-tdd-1",
+  "version": "1.0.0",
+  "description": "This is a kata exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caohongvu/kata-tdd-1-CAO-HONG-VU.git"
+  },
+  "keywords": [
+    "kata",
+    "exercise"
+  ],
+  "author": "vincent.cao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caohongvu/kata-tdd-1-CAO-HONG-VU/issues"
+  },
+  "homepage": "https://github.com/caohongvu/kata-tdd-1-CAO-HONG-VU#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
