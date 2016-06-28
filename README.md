@@ -2,5 +2,5 @@
 kata http://osherove.com/tdd-kata-1
 
 1. Make sure Node.js to be installed
-2. Run npm install from cmd window in root of project
-
+2. Make sure to Run npm install from cmd window in root of project
+3. Run grunt karma:unit to make sure all plugins are installed and the browser will be opened.
