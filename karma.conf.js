@@ -20,6 +20,16 @@ module.exports = function(config) {
 	  'karma-jshint-preprocessor',
       'karma-coverage',
 	  'karma-ie-launcher'
-    ]
+    ],
+	coverageReporter: {
+		//input file type
+		type : 'text',
+		//folder to containt test coverage results
+		dir: 'test-results/coverage/',
+		file: 'coverage-result.txt' 
+    },
+    junitReporter: {
+		outputFile: 'test-results/junit-results.xml'
+    }
   });
 };
