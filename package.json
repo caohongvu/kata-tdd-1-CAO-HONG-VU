@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/caohongvu/kata-tdd-1-CAO-HONG-VU#README",
   "devDependencies": {
-    "grunt": "^1.0.0",
-    "grunt-contrib-jshint": "^1.0.0"
+    "grunt": "1.0.0",
+    "grunt-contrib-jshint": "1.0.0",
+	"grunt-contrib-watch": "1.0.0"
   }
 }
