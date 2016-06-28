@@ -5,6 +5,14 @@ module.exports = function(config) {
       'test/**/*.js'
     ],
 	// testing framework
-    frameworks: ['jasmine']
+    frameworks: ['jasmine'],
+	browsers : ['Chrome'],
+	// list of karma plugins
+    plugins : [
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+	  'karma-ie-launcher'
+    ]
   });
 };
