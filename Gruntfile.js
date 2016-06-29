@@ -1,9 +1,11 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		karma: {
+			options: {
+				configFile: 'karma.conf.js'
+			},
 			unit: {
-				configFile: 'karma.conf.js',
-				autoWatch: false
+				singleRun: true
 			},
 			continuous: {
 				background: true
