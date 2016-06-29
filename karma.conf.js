@@ -2,7 +2,9 @@
 module.exports = function(config) {
   config.set({
     files: [
-      'src/**/*.js','test/**/*.js'
+	  'src/lib/angular.min.js',
+	  'src/lib/angular-mocks.js',
+      'src/**/*.js','test/unit/*.js'
     ],
 	// testing framework
     frameworks: ['jasmine'],
