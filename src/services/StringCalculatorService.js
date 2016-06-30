@@ -6,7 +6,11 @@ stringCalculator.factory('stringCalculatorService', function() {
 			return $scope.inputString;
 		} else if ($scope.inputString.indexOf($scope.splitChar) > 0) {
 			var inputtedNumbers = $scope.inputString.split($scope.splitChar);
-			return (Number(inputtedNumbers[0]) + Number(inputtedNumbers[1]));
+			var sum = 0;
+			for(index=0; index < inputtedNumbers.length; index ++){
+				sum += Number(inputtedNumbers[index]);
+			} 
+			return sum;
 		}
 	};
 
