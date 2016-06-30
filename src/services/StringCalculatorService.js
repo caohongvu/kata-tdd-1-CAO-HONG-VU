@@ -21,7 +21,7 @@ stringCalculator.factory('stringCalculatorService', function() {
 		var negativeNumber = [];
 		
 		if ($scope.inputtedNumbers) {
-			for(index=0; index < $scope.inputtedNumbers.length; index ++){
+			for(index = 0; index < $scope.inputtedNumbers.length; index ++){
 				if($scope.inputtedNumbers[index] > 0) {
 					sum += Number($scope.inputtedNumbers[index]);
 				} else {
