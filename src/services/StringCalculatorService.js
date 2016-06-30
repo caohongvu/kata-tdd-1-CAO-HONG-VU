@@ -22,10 +22,11 @@ stringCalculator.factory('stringCalculatorService', function() {
 		
 		if ($scope.inputtedNumbers) {
 			for(index = 0; index < $scope.inputtedNumbers.length; index ++){
-				if($scope.inputtedNumbers[index] > 0) {
-					sum += Number($scope.inputtedNumbers[index]);
-				} else {
-					negativeNumber.push($scope.inputtedNumbers[index]);
+				var numTemp = $scope.inputtedNumbers[index];
+				if (Number(numTemp) > 0 && Number(numTemp) <= 1000) {
+					sum += Number(numTemp);
+				} else if(Number(numTemp) < 0){
+					negativeNumber.push(numTemp);
 				}
 			}
 		}
