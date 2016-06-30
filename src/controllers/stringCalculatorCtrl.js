@@ -1,15 +1,8 @@
 /*global stringCalculator*/
 'use strict';
 
-stringCalculator.controller('stringCalculatorCtrl', function StringCalculatorCtrl($scope) {
+stringCalculator.controller('stringCalculatorCtrl', function StringCalculatorCtrl($scope, stringCalculatorService) {
 	$scope.add = function () {
-		if($scope.inputString === "" || !$scope.inputString){
-			$scope.result = 0;
-		} else if ($scope.inputString.indexOf($scope.splitChar) < 0) {
-			$scope.result = $scope.inputString;
-		} else if ($scope.inputString.indexOf($scope.splitChar) > 0) {
-			var inputtedNumbers = $scope.inputString.split($scope.splitChar);
-			$scope.result = Number(inputtedNumbers[0]) + Number(inputtedNumbers[1]);
-		}
+		$scope.result = stringCalculatorService.add($scope);
 	};
 });
