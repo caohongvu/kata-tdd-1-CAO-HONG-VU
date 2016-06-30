@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		jshint: {
+			files: ['Gruntfile.js', 'src/app.js', 'src/controllers/*.js', 'src/services/*.js', 'test/**/*.js'],
+		},
 		karma: {
 			options: {
 				configFile: 'karma.conf.js'
@@ -15,15 +18,16 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
-			karma: {
-				files: ['src/**/*.js', 'test/unit/*.js'],
-				tasks: ['karma:unit']
+			all: {
+				files: ['<%= jshint.files %>'],
+				tasks: ['jshint', 'karma:unit']
 			}
 		}
 		
 	});
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	
-	grunt.registerTask('default', ['watch:karma']);
+	grunt.registerTask('default', ['watch']);
 };

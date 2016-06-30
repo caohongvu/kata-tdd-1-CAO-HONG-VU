@@ -1,6 +1,3 @@
-/*global stringCalculator*/
-'use strict';
-
 stringCalculator.factory('stringCalculatorService', function() {
 	var add = function ($scope) {
 		if($scope.inputString === "" || !$scope.inputString){
