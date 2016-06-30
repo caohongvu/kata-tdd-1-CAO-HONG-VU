@@ -9,9 +9,6 @@ module.exports = function(grunt) {
 			},
 			unit: {
 				singleRun: true
-			},
-			continuous: {
-				background: true
 			}
 		},
 		watch: {
