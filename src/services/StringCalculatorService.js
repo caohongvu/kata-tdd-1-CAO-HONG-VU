@@ -1,5 +1,10 @@
 stringCalculator.factory('stringCalculatorService', function() {
 	var add = function ($scope) {
+		if($scope.inputString && $scope.inputString.startsWith('//')){
+			var array = $scope.inputString.split("\n");
+			$scope.inputString = array[1];
+			$scope.splitChar = array[0].replace("//","");
+		}
 		if($scope.inputString) {
 			$scope.inputString = $scope.inputString.replace(new RegExp($scope.newLineChar, 'g'), $scope.splitChar);
 		} 
