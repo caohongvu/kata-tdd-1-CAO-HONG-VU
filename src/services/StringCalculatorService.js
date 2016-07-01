@@ -19,10 +19,7 @@ stringCalculator.factory('stringCalculatorService', function() {
 		if($scope.inputString) {
 			if($scope.multiSplitChar) {
 				for(index = 0; index < $scope.multiSplitChar.length; index++) {
-					var regexChar = $scope.multiSplitChar[index];
-					if(regexChar === "*" || regexChar === "^") {
-						regexChar = "\\" + regexChar;
-					}
+					var regexChar = "[" + $scope.multiSplitChar[index] + "]";
 					$scope.inputString = $scope.inputString.replace(new RegExp(regexChar, 'g'), $scope.splitChar);
 				}
 			}
