@@ -1,13 +1,33 @@
 stringCalculator.factory('stringCalculatorService', function() {
 	var add = function ($scope) {
+		$scope.multiSplitChar = [];
 		if($scope.inputString && $scope.inputString.startsWith('//')){
 			var array = $scope.inputString.split("\n");
 			$scope.inputString = array[1];
-			$scope.splitChar = array[0].replace("//","");
+			var splitCharTemp = array[0].replace("//","");
+			if(splitCharTemp.indexOf('[') > -1){
+				var tempArray = splitCharTemp.split('][');
+				for(index = 0; index < tempArray.length; index ++){
+					var splitChar = tempArray[index].replace('[','').replace(']','');
+					$scope.multiSplitChar.push(splitChar);
+				}
+			} else {
+				$scope.splitChar = splitCharTemp;
+			}
 		}
+		
 		if($scope.inputString) {
+			if($scope.multiSplitChar) {
+				for(index = 0; index < $scope.multiSplitChar.length; index++) {
+					var regexChar = $scope.multiSplitChar[index];
+					if(regexChar === "*" || regexChar === "^") {
+						regexChar = "\\" + regexChar;
+					}
+					$scope.inputString = $scope.inputString.replace(new RegExp(regexChar, 'g'), $scope.splitChar);
+				}
+			}
 			$scope.inputString = $scope.inputString.replace(new RegExp($scope.newLineChar, 'g'), $scope.splitChar);
-		} 
+		}
 		if($scope.inputString === "" || !$scope.inputString){
 			return 0;
 		} else if ($scope.inputString.indexOf($scope.splitChar) < 0) {
@@ -34,6 +54,7 @@ stringCalculator.factory('stringCalculatorService', function() {
 			throw new Error(exceptionMessage + negativeNumber.toString());
 		}
 		return sum;
+		
 	};
 
 	return {
