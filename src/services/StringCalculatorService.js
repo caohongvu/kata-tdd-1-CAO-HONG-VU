@@ -1,27 +1,18 @@
 stringCalculator.factory('stringCalculatorService', function() {
 	var add = function ($scope) {
-		$scope.multiSplitChar = [];
 		if($scope.inputString && $scope.inputString.startsWith('//')){
 			var array = $scope.inputString.split("\n");
 			$scope.inputString = array[1];
 			var splitCharTemp = array[0].replace("//","");
-			if(splitCharTemp.indexOf('[') > -1){
-				var tempArray = splitCharTemp.split('][');
-				for(index = 0; index < tempArray.length; index ++){
-					var splitChar = tempArray[index].replace('[','').replace(']','');
-					$scope.multiSplitChar.push(splitChar);
-				}
+			if(splitCharTemp.indexOf('][') > -1){
+				$scope.multiSplitChar = splitCharTemp.split('][');
 			} else {
 				$scope.splitChar = splitCharTemp;
 			}
 		}
-		
 		if($scope.inputString) {
 			if($scope.multiSplitChar) {
-				for(index = 0; index < $scope.multiSplitChar.length; index++) {
-					var regexChar = "[" + $scope.multiSplitChar[index] + "]";
-					$scope.inputString = $scope.inputString.replace(new RegExp(regexChar, 'g'), $scope.splitChar);
-				}
+				$scope.inputString = $scope.inputString.replace(new RegExp($scope.multiSplitChar, 'g'), $scope.splitChar);
 			}
 			$scope.inputString = $scope.inputString.replace(new RegExp($scope.newLineChar, 'g'), $scope.splitChar);
 		}
