@@ -5,3 +5,4 @@ kata http://osherove.com/tdd-kata-1
 2. Make sure to Run npm install from cmd window in root of project
 3. Run npm install grunt-contrib-jshint
 4. Run grunt to make sure all plugins are installed and all js files, unit test case will be execute, then grunt continue watch and re-execute each time these js files changed.
+5. For manual testing, please open src/index.html file in browser and intput string value for testing
