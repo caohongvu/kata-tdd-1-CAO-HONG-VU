@@ -1,7 +1,7 @@
 stringCalculator.factory('stringCalculatorService', function() {
 	var add = function ($scope) {
 		if($scope.inputString && $scope.inputString.startsWith('//')){
-			var array = $scope.inputString.split("\n");
+			var array = $scope.inputString.split($scope.newLineChar);
 			$scope.inputString = array[1];
 			var splitCharTemp = array[0].replace("//","");
 			if(splitCharTemp.indexOf('][') > -1){
