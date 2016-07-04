@@ -4,7 +4,7 @@
 	</head>
 	<body ng-app="stringCalculator" ng-controller = "stringCalculatorCtrl">
 		<div class="input">
-			<input type="text" ng-model="inputString" placeholder="Input String to calculate"/>
+			<textarea ng-model="inputString" placeholder="Input String to calculate"></textarea>
 			<input type="button" ng-click="add()" value="Add"></input>
 		</div>
 		<div class="result" ng-bind="result"></div>
