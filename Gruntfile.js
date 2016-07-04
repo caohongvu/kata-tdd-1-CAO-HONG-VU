@@ -18,6 +18,12 @@ module.exports = function(grunt) {
 			all: {
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint', 'karma:unit']
+			},
+			html: {
+				files: ['src/*.html'],
+				options: {
+					livereload: true
+				}
 			}
 		}
 		
